@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rxoa.zlpay"
+    android:versionCode="1"
+    android:versionName="1.8" >
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="12" />
+
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.autofocus" />
+    <uses-feature android:name="android.hardware.flash" />
+
+    <instrumentation
+        android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.example.firstproject" />
+
+    <application
+        android:name="com.rxoa.zlpay.MainApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@*android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="com.rxoa.zlpay.acty.WelcomeActy"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/app_name"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.rxoa.zlpay.acty.MainHomeActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserLoginActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserResetpwdActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserFindpwdActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserRegProtActy"
+            android:hardwareAccelerated="false"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserRegActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.OrderDetailActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.OrderTakemoneyDetailActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.MoneyInputActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.ReceiveMoneyConfirmActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.MoneyInputCalActy"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.TakeMoneyInputActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.TakeMoneyActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.BlanceManageActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.TransAccInputActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.RepayCreditInputActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.PhoneChargeInputActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.PayTypeSelectActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.OrderConfirmActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.OrderSignatureActy"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.MakeSignatureActy"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.ReadCardActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.ShowCardBlanceActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserInfoDetailActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.BankCardDetailActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.DeviceDetailActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.AccountSecurityActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.AccountActiveActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.UserActivateActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.RealNameAuthActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.BindMainCardActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.BindOtherCardActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.BindDeviceActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.FeedBackActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.AboutUsActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.HelpActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.acty.CitiesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.test.TestDeviceActy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.rxoa.zlpay.heip.Help1Activity"
+            android:label="@string/title_activity_help1" >
+        </activity>
+        <activity
+            android:name="com.rxoa.zlpay.heip.Help2Activity"
+            android:label="@string/title_activity_help2" >
+        </activity>
+        <activity
+            android:name="com.rxoa.zlpay.heip.Help3Activity"
+            android:label="@string/title_activity_help3" >
+        </activity>
+        <activity
+            android:name="com.rxoa.zlpay.heip.NewsActivity"
+            android:label="@string/title_activity_news" />
+        <activity
+            android:name="com.rxoa.zlpay.heip.GuideActivity"
+            android:label="@string/title_activity_guide" />
+        <activity
+            android:name="com.rxoa.zlpay.heip.ListainActivity"
+            android:label="@string/title_activity_listain" >
+        </activity>
+        <activity
+            android:name="com.rxoa.zlpay.heip.BanbenActivity"
+            android:label="@string/title_activity_banben" >
+        </activity>
+    </application>
+
+</manifest>

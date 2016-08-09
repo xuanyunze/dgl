@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+	<color name="white">#ffffffff</color>
+	<color name="light_gray">#ffe6e6e6</color>
+	<color name="black">#ff000000</color>
+	<color name="calendar_header_color">#232937</color>
+	<color name="calendar_pressed">#58a0ff</color>
+	<color name="calendar_touming">#00000000</color>
+	<color name="theme_color">#DD6B1E</color>
+</resources>

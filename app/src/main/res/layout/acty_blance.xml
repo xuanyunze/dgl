@@ -1,0 +1,438 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fmt_acc"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <include
+        android:id="@+id/top_header"
+        layout="@layout/sec_header_withdouble" />
+
+    <ScrollView
+        android:id="@+id/blance_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/top_header"
+        android:layout_marginBottom="55dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                
+                android:layout_weight="39.50"
+                android:background="@drawable/back"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp" >
+
+                <ImageView
+                    android:id="@+id/blance_headicon_iv"
+                    android:layout_width="71dp"
+                    android:layout_height="89dp"
+                    android:layout_weight="0.06"
+                    android:src="@drawable/head" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:id="@+id/blance_realname_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="未认证"
+                        android:textColor="@color/white"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal" >
+
+                        <TextView
+                            android:id="@+id/blance_uphone_label"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="手机号："
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/blance_uid_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="账号尚未登录"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+           <LinearLayout
+	        android:id="@+id/blance_acc_info"
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:layout_marginTop="10dp"
+	        android:background="@drawable/accmanage_bg"
+	        android:orientation="vertical"
+	        android:paddingBottom="3dp" >
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginLeft="50dp"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginTop="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="账户总余额"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/blance_acc_tv_allleft"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="0.00"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginLeft="50dp"
+	            android:orientation="horizontal"
+	            android:visibility="gone" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginTop="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="收款余额"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/blance_acc_tv_re"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="0.00"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginLeft="50dp"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_marginTop="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="零费用收款"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/blance_acc_tv_zero"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="0.00"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginLeft="50dp"
+	            android:layout_marginTop="2dp"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="已提现金额"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/blance_acc_tv_alltake"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="0.00"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginLeft="50dp"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="可提现余额"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+
+	            <TextView
+	                android:id="@+id/blance_acc_tv_takeleft"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_marginLeft="5dp"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical"
+	                android:text="0.00"
+	                android:textColor="#ff666666"
+	                android:textSize="16sp" />
+	        </LinearLayout>
+
+	        <LinearLayout
+	            android:layout_width="match_parent"
+	            android:layout_height="25dp"
+	            android:layout_marginTop="5dp"
+	            android:gravity="center_vertical"
+	            android:orientation="horizontal" >
+
+	            <TextView
+	                android:id="@+id/blance_takenow"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_weight="9"
+	                android:gravity="center_vertical|right"
+	                android:text=""
+	                android:textColor="#ffaaaaff"
+	                android:textSize="18sp" />
+
+	            <ImageView
+	                android:id="@+id/accmanage_ivbtn_accsafe"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginRight="30dp"
+	                android:layout_weight="0.5"
+	                android:gravity="center_vertical|right"
+	                 />
+	        </LinearLayout>
+
+	        <Button
+	            android:id="@+id/blance_takenow"
+	            android:layout_width="match_parent"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/btn_common_yellow"
+	            android:layout_marginLeft="10dp"
+	            android:layout_marginRight="10dp"
+	            android:gravity="center"
+	            android:text="立即提现" 
+	            android:textColor="@color/white"
+	            android:textSize="18sp"
+	            android:onClick="onClick"/>
+
+	    </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/blance_bar_limit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/accmanage_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="20dp"
+                android:paddingTop="3dp"
+                android:visibility="gone" >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/accmanage_icon_maincard" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="9"
+                    android:gravity="center_vertical"
+                    android:text="额度信息"
+                    android:textColor="#ff666666"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/blance_limit_info"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/accmanage_bg"
+                android:orientation="vertical"
+                android:paddingBottom="3dp"
+                android:visibility="gone" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="50dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="每日交易限额"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/blance_limit_tv_all"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="0.00"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="2dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="快速提现限额"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/blance_limit_tv_t0"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="0.00"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginLeft="50dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="单笔交易限额"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/blance_limit_tv_per"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical"
+                        android:text="0.00"
+                        android:textColor="#ff666666"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:id="@+id/blance_applynow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="9"
+                        android:gravity="center_vertical|right"
+                        android:text="申请提额"
+                        android:textColor="#ffaaaaff"
+                        android:textSize="18sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:layout_weight="0.5"
+                        android:gravity="center_vertical|right"
+                        android:src="@drawable/accmanage_arrow_right" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

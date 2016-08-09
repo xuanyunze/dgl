@@ -1,0 +1,187 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+	<include layout="@layout/sec_header_withdouble" android:id="@+id/top_header"/>
+	
+	<LinearLayout
+	    android:id="@+id/inputcal_cal"
+    	android:layout_width="match_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical" 
+    	android:gravity="bottom"
+    	android:layout_alignParentBottom="true">
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal" >
+ 
+        <Button
+            android:id="@+id/inputcal_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="1" />
+ 
+        <Button
+            android:id="@+id/inputcal_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="2" />
+ 
+        <Button
+            android:id="@+id/inputcal_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="3" />
+    </LinearLayout>
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal" >
+ 
+        <Button
+            android:id="@+id/inputcal_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="4" />
+ 
+        <Button
+            android:id="@+id/inputcal_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="5" />
+ 
+        <Button
+            android:id="@+id/inputcal_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="6" />
+    </LinearLayout>
+ 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal" >
+ 
+        <Button
+            android:id="@+id/inputcal_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="7" />
+ 
+        <Button
+            android:id="@+id/inputcal_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="8" />
+ 
+        <Button
+            android:id="@+id/inputcal_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="9" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:orientation="horizontal" >
+ 
+        <Button
+            android:id="@+id/inputcal_back"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="退格" />
+ 
+        <Button
+            android:id="@+id/inputcal_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="0" />
+ 
+        <Button
+            android:id="@+id/inputcal_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="30sp"
+            android:text="完成" />
+    </LinearLayout>
+	</LinearLayout> 
+   	<LinearLayout
+	    android:id="@+id/inputcal_lnredit"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_above="@id/inputcal_cal"
+    	android:layout_below="@id/top_header"
+    	android:layout_marginTop="15dp"
+    	android:gravity="center"
+    	android:orientation="vertical">
+        <LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="match_parent"
+		    android:layout_height="60dp"
+		    android:background="@drawable/accmanage_bg"
+		    >
+    		<TextView
+        	android:id="@+id/inputcal_info"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:background="@null"
+        	android:layout_gravity="center_vertical|left"
+        	android:gravity="center"
+        	android:textSize="16sp"
+        	android:textColor="#ffccccff"
+        	android:text="请输入交易金额"
+        />
+		</LinearLayout>
+    	<LinearLayout 
+		    android:orientation="horizontal"
+		    android:layout_width="match_parent"
+		    android:layout_height="100dp"
+		    
+		    > 
+    		<TextView
+        	android:id="@+id/inputcal_value"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:background="@null"
+        	android:layout_gravity="center_horizontal|center"
+        	android:gravity="center"
+        	android:textSize="40sp"
+        	android:textColor="#ffaa6666"
+        	android:hint="0.00"
+        	android:text=""
+        />
+    	</LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

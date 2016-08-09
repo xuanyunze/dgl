@@ -1,0 +1,63 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rxoa.zlpay.MainActivity" >
+
+	<include layout="@layout/sec_header_withdouble" android:id="@+id/top_header"/>
+   	
+	<LinearLayout
+   	    android:id="@+id/lnr_moneyinput_money"
+   	    android:layout_below="@id/top_header"
+   	    android:orientation="horizontal"
+   		android:background="@drawable/login_inputbox"
+   		android:layout_width="fill_parent"
+   		android:paddingLeft="10dp"
+   		android:layout_marginLeft="30dp"
+   		android:layout_marginRight="30dp"
+   		android:layout_marginTop="30dp"
+   		android:layout_height="wrap_content">
+   		
+   		<ImageView
+   	    	android:contentDescription=""
+   	    	android:background="@drawable/home_app_receivemoney"
+   	    	android:layout_width="wrap_content"
+   	    	android:layout_gravity="center"
+   	    	android:layout_height="wrap_content"/>
+   		
+   		<EditText android:textSize="18.0sp" 
+   	    	android:id="@+id/money_input_money_edtv"
+   	    	android:background="#ffffffff"
+   	    	android:paddingLeft="0.0dip" 
+   	    	android:layout_width="fill_parent" 
+   	    	android:layout_height="wrap_content" 
+   	    	android:layout_marginLeft="10.0dip" 
+   	    	android:layout_marginTop="15.0dip" 
+   	    	android:layout_marginRight="10.0dip" 
+   	    	android:hint="@string/hint_moneyinput_money" 
+   	    	android:ems="10" 
+   	    	android:singleLine="true" 
+   	    	android:inputType="phone" />
+   	  </LinearLayout>
+   	  
+	  <Button 
+   	      android:id="@+id/btn_moneyinput_next"
+   	      android:layout_below="@id/lnr_moneyinput_money"
+   	      android:textSize="20sp"
+   	      android:gravity="center"
+   	      android:layout_marginTop="20dp"
+   	      android:layout_marginLeft="30dp"
+   	      android:layout_marginRight="30dp"
+   	      android:background="@drawable/btn_common_yellow"
+   	      android:textColor="@color/white"
+   	      android:layout_gravity="center"
+   	      android:layout_width="match_parent"
+   	      android:layout_height="wrap_content"
+   	      android:text="@string/btn_next_text"
+   	      />
+   	
+</RelativeLayout>

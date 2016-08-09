@@ -1,0 +1,208 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.rxoa.zlpay.MainActivity" >
+
+	<include layout="@layout/sec_header_withdouble" android:id="@+id/top_header"/>
+   	
+   	<LinearLayout
+   	    android:id="@+id/lnr_resetpwd_hispwd"
+   	    android:layout_below="@id/top_header"
+   	    android:orientation="horizontal"
+   		android:background="@drawable/login_inputbox"
+   		android:layout_width="fill_parent"
+   		android:paddingLeft="10dp"
+   		android:layout_marginLeft="30dp"
+   		android:layout_marginRight="30dp"
+   		android:layout_marginTop="40dp"
+   		android:layout_height="wrap_content">
+   		
+   		<ImageView
+   	    	android:contentDescription=""
+   	    	android:background="@drawable/login_inputicon_phone"
+   	    	android:layout_width="wrap_content"
+   	    	android:layout_gravity="center"
+   	    	android:layout_height="wrap_content"/>
+   		
+   		<EditText android:textSize="18.0sp" 
+   	    	android:id="@+id/resetpwd_edt_hipwd"
+   	    	android:background="#ffffffff"
+   	    	android:paddingLeft="0.0dip" 
+   	    	android:layout_width="fill_parent" 
+   	    	android:layout_height="wrap_content" 
+   	    	android:layout_marginLeft="10.0dip" 
+   	    	android:layout_marginTop="15.0dip" 
+   	    	android:layout_marginRight="10.0dip" 
+   	    	android:hint="@string/hint_login_phone" 
+   	    	android:ems="10" 
+   	    	android:singleLine="true" 
+   	    	android:inputType="textPassword" />
+   	  </LinearLayout>
+   	  
+   	  <LinearLayout
+   	    android:id="@+id/lnr_resetpwd_pwd"
+   	    android:layout_below="@id/lnr_resetpwd_hispwd"
+   	    android:orientation="horizontal"
+   		android:background="@drawable/login_inputbox"
+   		android:layout_width="fill_parent"
+   		android:paddingLeft="10dp"
+   		android:layout_marginLeft="30dp"
+   		android:layout_marginRight="30dp"
+   		android:layout_marginTop="10dp"
+   		android:layout_height="wrap_content">
+   		
+   		<ImageView
+   	    	android:contentDescription=""
+   	    	android:background="@drawable/login_inputicon_pwd"
+   	    	android:layout_width="wrap_content"
+   	    	android:layout_gravity="center"
+   	    	android:layout_height="wrap_content"/>
+   		
+   		<EditText android:textSize="18.0sp" 
+   	    	android:id="@+id/resetpwd_edt_pwd"
+   	    	android:background="#ffffffff"
+   	    	android:paddingLeft="0.0dip" 
+   	    	android:layout_width="fill_parent" 
+   	    	android:layout_height="wrap_content" 
+   	    	android:layout_marginLeft="10.0dip" 
+   	    	android:layout_marginTop="15.0dip" 
+   	    	android:layout_marginRight="10.0dip" 
+   	    	android:hint="@string/tip_findpwd_newpwd"
+   	    	android:ems="10"
+   	    	android:inputType="textPassword"
+   	    	android:singleLine="true" />
+   	  </LinearLayout>
+   	  <LinearLayout
+   	    android:id="@+id/lnr_resetpwd_repwd"
+   	    android:layout_below="@id/lnr_resetpwd_pwd"
+   	    android:orientation="horizontal"
+   		android:background="@drawable/login_inputbox"
+   		android:layout_width="fill_parent"
+   		android:paddingLeft="10dp"
+   		android:layout_marginLeft="30dp"
+   		android:layout_marginRight="30dp"
+   		android:layout_marginTop="10dp"
+   		android:layout_height="wrap_content">
+   		
+   	      
+   		<ImageView
+   	    	android:contentDescription=""
+   	    	android:background="@drawable/login_inputicon_pwd"
+   	    	android:layout_width="wrap_content"
+   	    	android:layout_gravity="center"
+   	    	android:layout_height="wrap_content"/>
+   		
+   		<EditText android:textSize="18.0sp" 
+   	    	android:id="@+id/resetpwd_edt_repwd"
+   	    	android:background="#ffffffff"
+   	    	android:paddingLeft="0.0dip" 
+   	    	android:layout_width="fill_parent" 
+   	    	android:layout_height="wrap_content" 
+   	    	android:layout_marginLeft="10.0dip" 
+   	    	android:layout_marginTop="15.0dip" 
+   	    	android:layout_marginRight="10.0dip" 
+   	    	android:hint="@string/hint_reg_repwd"
+   	    	android:ems="10"
+   	    	android:inputType="textPassword"
+   	    	android:singleLine="true" />
+   	  </LinearLayout>
+   	  
+   	  <LinearLayout
+   	    android:id="@+id/lnr_findpwd_code"
+   	    android:layout_below="@id/lnr_resetpwd_repwd"
+   	    android:orientation="horizontal"
+   		android:layout_width="fill_parent"
+   		android:layout_alignParentLeft="true"
+   		android:layout_marginLeft="30dp"
+   		android:layout_marginRight="30dp"
+   		android:layout_marginTop="10dp"
+   		android:layout_height="50dp"
+   		android:visibility="gone">
+   		<LinearLayout
+   	    	android:id="@+id/lnr_findpwd_codein"
+   	    	android:orientation="horizontal"
+   			android:background="@drawable/login_inputbox"
+   			android:layout_width="match_parent"
+   			android:paddingLeft="10dp"
+   			android:layout_height="wrap_content"
+   			android:layout_weight="0.8"
+   			>
+   		<ImageView
+   	    	android:contentDescription=""
+   	    	android:background="@drawable/reg_icon_code"
+   	    	android:layout_width="wrap_content"
+   	    	android:layout_gravity="center"
+   	    	android:layout_height="wrap_content"/>
+   		
+   		<EditText android:textSize="18.0sp"
+   	    	android:id="@+id/findpwd_edt_code"
+   	    	android:background="#ffffffff"
+   	    	android:paddingLeft="0.0dip" 
+   	    	android:layout_width="wrap_content" 
+   	    	android:layout_height="wrap_content" 
+   	    	android:layout_marginLeft="10.0dip" 
+   	    	android:layout_marginTop="12.0dip" 
+   	    	android:layout_marginRight="10.0dip" 
+   	    	android:paddingTop="3dp"
+			android:paddingBottom="3dp"
+   	    	android:hint="@string/hint_reg_code"
+   	    	android:ems="10"
+   	    	android:singleLine="true" />
+
+   		</LinearLayout>
+   		<ImageView 
+   		    android:id="@+id/findpwdvimage"
+   		    android:layout_width="80dp"
+   		    android:layout_height="50dp"
+   		    android:layout_marginLeft="3dp"
+   		    android:layout_gravity="center_vertical|center"
+   		    android:gravity="center_vertical|center"
+   		    android:visibility="gone"
+   		    />
+   	 <Button 
+   	      android:id="@+id/findpwd_btn_getcode"
+   	      android:textSize="16sp"
+   	      android:gravity="center"
+   	      android:layout_marginTop="2dp"
+   	      android:layout_marginLeft="3dp"
+   	      android:layout_marginRight="3dp"
+   	      android:textColor="#ffAAAAAA"
+   	      android:layout_gravity="center_vertical|center"
+   	      android:layout_width="wrap_content"
+   	      android:layout_height="match_parent"
+   	      android:text="@string/btn_reg_getcode_text"
+   	      />
+   	  </LinearLayout>
+   	  <TextView
+   	      android:id="@+id/findpwd_tip_getcode"
+   	      android:layout_below="@id/lnr_findpwd_code"
+   	      android:layout_alignRight="@id/lnr_findpwd_code"
+   	      android:layout_alignLeft="@id/lnr_findpwd_code"
+   	      android:layout_marginTop="15dp"
+   	      android:paddingLeft="3dp"
+   	      android:layout_height="wrap_content"
+   	      android:layout_width="wrap_content"
+   	      android:text="点击“获取验证码”接收短信"
+   	      android:textColor="#ffcc6666"
+   	      android:visibility="gone"
+   	      />
+   	     
+   	  <Button 
+   	      android:id="@+id/btn_resetpwd"
+   	      android:layout_below="@id/findpwd_tip_getcode"
+   	      android:textSize="16sp"
+   	      android:layout_width="fill_parent"
+   	      android:layout_height="wrap_content"
+   	      android:layout_marginLeft="30dp"
+   	      android:layout_marginRight="30dp"
+   	      android:layout_marginTop="20dp"
+   	      android:textColor="@color/white"
+   	      android:background="@drawable/btn_common_yellow"
+   	      android:text="@string/resetpwd_btn_reset"
+   	      />
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#f0f0f0">
+
+	<include layout="@layout/sec_header_withdouble" android:id="@+id/top_header" />
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="50dp"
+	    android:orientation="horizontal"
+	    android:background="@null"
+	    >
+	   
+	   <TextView 
+	        android:id="@+id/olist_cate_take"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical|center"
+	        android:layout_gravity="center_vertical|center"
+	        android:layout_weight="1"
+	        android:text="快速收款"
+	        android:textColor="#cc999999"
+	        android:textSize="20sp"
+	    />
+	    <TextView
+	        android:id="@+id/olist_cate_receive"
+	        android:layout_width="wrap_content"
+	        android:layout_height="match_parent"
+	        android:gravity="center_vertical|center"
+	        android:layout_gravity="center_vertical|center"
+	        android:layout_weight="1"
+	        android:text="普通收款"
+	        android:textColor="#eefefefe"
+	        android:textSize="20sp"
+	        android:background="#ff3a9ee6"
+	     />
+	   
+	</LinearLayout>
+    <com.rxoa.zlpay.combx.xlistview.XListView
+        android:id="@+id/order_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" android:cacheColorHint="#00000000">
+    </com.rxoa.zlpay.combx.xlistview.XListView>
+    
+</LinearLayout>

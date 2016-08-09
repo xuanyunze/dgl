@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/banner_relative"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/top_relative"
+    android:background="#ffffffff">
+<com.rxoa.zlpay.base.BaseViewFlipper 
+    android:id="@+id/banner_viewFlipper" 
+    android:layout_width="match_parent" 
+    android:layout_height="150dp" 
+    android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+      android:autoStart="true" 
+      android:flipInterval="2000" /> 
+    
+    
+    
+    <RadioGroup
+        android:id="@+id/banner_radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/banner_viewFlipper"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal" >
+        
+        <RadioButton
+            android:id="@+id/banner_radioButton_flipperPoint0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/home_banner_point"
+            android:checked="true" />
+        <RadioButton
+            android:id="@+id/banner_radioButton_flipperPoint1"
+            style="@style/home_banner_point" />
+        <RadioButton
+            android:id="@+id/banner_radioButton_flipperPoint2"
+            style="@style/home_banner_point" />
+    </RadioGroup>
+</RelativeLayout>

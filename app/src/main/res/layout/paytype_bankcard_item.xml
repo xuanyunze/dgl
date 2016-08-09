@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.rxoa.zlpay.combx.ChxableLinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="horizontal"
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent"
+    android:background="#ffffffff"
+    android:gravity="center_vertical"
+    android:descendantFocusability="blocksDescendants"
+    >
+    <CheckBox
+        android:drawableLeft="@drawable/btn_radio_common"
+        android:button="@null"
+        android:drawablePadding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:focusable="false"
+        android:background="@null"
+        />
+    <LinearLayout   
+		android:orientation="vertical"
+    	android:layout_height="wrap_content" 
+    	android:layout_width="match_parent"
+    	android:background="#ffffffff"
+    	android:gravity="left"
+    >
+    <LinearLayout
+    	android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView 
+        	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffCCAAAA"
+            android:text="账户名："/>
+         <TextView 
+         	android:id="@+id/paytype_item_accname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffAAAAAA"
+            android:text="周大伟(中国农业银行)"/>
+	</LinearLayout>
+    <LinearLayout
+    	android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content">
+        <TextView 
+        	android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffCCAAAA"
+            android:text="账　号："/>
+         <TextView 
+         	android:id="@+id/paytype_item_accno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#ffAAAAAA"
+            android:text="6226622689****8909"/>
+	</LinearLayout>
+</LinearLayout>
+</com.rxoa.zlpay.combx.ChxableLinearLayout> 

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout   
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+    android:layout_height="wrap_content" 
+    android:layout_width="match_parent"
+    android:background="#ffffffff"
+    android:gravity="left"
+    >
+    
+       	<LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffCCAAAA"
+                android:text="账户名："/>
+            <TextView 
+                android:id="@+id/accmanage_bankcard_item_accname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffAAAAAA"
+                android:text="周大伟"/>
+        </LinearLayout>
+       	<LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffCCAAAA"
+                android:text="账　号："/>
+            <TextView 
+                android:id="@+id/accmanage_bankcard_item_accno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffAAAAAA"
+                android:text="6220568756****5689"/>
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="gone"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffCCAAAA"
+                android:text="开户行："/>
+            <TextView 
+                android:id="@+id/accmanage_bankcard_item_bankname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="#ffAAAAAA"
+                android:text="中国工商银行"/>
+        </LinearLayout>
+</LinearLayout> 
