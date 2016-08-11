@@ -6,8 +6,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+import android.content.Context;
 import android.content.Intent;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,6 +26,7 @@ import android.widget.TextView;
 
 import com.rxoa.zlpay.BaseUIFragment;
 import com.rxoa.zlpay.Config;
+import com.rxoa.zlpay.MainApplication;
 import com.rxoa.zlpay.R;
 import com.rxoa.zlpay.acty.AboutUsActy;
 import com.rxoa.zlpay.acty.BindMainCardActy;
@@ -58,7 +62,7 @@ import com.rxoa.zlpay.vo.UserAccInfoReqVo;
 import com.rxoa.zlpay.vo.UserAccInfoRespVo;
 
 public class AppCenterFmt extends BaseUIFragment implements OnClickListener{
-	
+	public static final String TAG = AppCenterFmt.class.getName();
 	private MainHomeActy mActivity = null;
 	private BaseViewFlipper bannerFlipper;
 	private ImageView[] bannerImageViews;
@@ -85,7 +89,8 @@ public class AppCenterFmt extends BaseUIFragment implements OnClickListener{
 	}
 	
     public View initView(View view){
-    	try{    		
+		MainApplication instance = MainApplication.getInstance();
+		try{
     		bannerFlipper = (BaseViewFlipper) view.findViewById(R.id.banner_viewFlipper);
     		bannerRadioGroup = (RadioGroup) view.findViewById(R.id.banner_radioGroup);
     		bannerFlipper.setOnFlipListener(bannerFlipListener);
@@ -441,4 +446,5 @@ public class AppCenterFmt extends BaseUIFragment implements OnClickListener{
         	}
     	}
 	}
+
 }

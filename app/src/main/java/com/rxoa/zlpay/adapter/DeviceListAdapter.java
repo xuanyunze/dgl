@@ -4,16 +4,20 @@ import java.util.List;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.rxoa.zlpay.MainApplication;
 import com.rxoa.zlpay.R;
 import com.rxoa.zlpay.base.BaseAdapter;
 import com.rxoa.zlpay.entity.DeviceEntity;
 
 public class DeviceListAdapter extends BaseAdapter{
+	public static final String TAG = DeviceListAdapter.class.getName();
 	
 	private List<DeviceEntity> datas = null;
 	private LayoutInflater inflater = null;
@@ -60,6 +64,11 @@ public class DeviceListAdapter extends BaseAdapter{
 				mViewHolder = (ViewHolder) arg1.getTag();
 			}
 			DeviceEntity item = (DeviceEntity) getItem(arg0);
+			Log.e(TAG, "DeviceEntity-sn:" + item.getDeviceSn());
+			MainApplication instance = MainApplication.getInstance();
+			instance.setDeviceEntity(item.getDeviceSn());
+			Intent intent = new Intent("devicesn" + item.getDeviceSn());
+
 			mViewHolder.tvDeviceSn.setText(item.getDeviceSn());
 			mViewHolder.tvDeviceType.setText(typeToText(item.getDeviceType()));
 			mViewHolder.tvDeviceStat.setText(statToText(item.getDeviceStat()));

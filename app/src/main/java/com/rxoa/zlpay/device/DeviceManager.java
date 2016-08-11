@@ -3,9 +3,18 @@ package com.rxoa.zlpay.device;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.rxoa.zlpay.Config;
+import com.rxoa.zlpay.MainApplication;
+import com.rxoa.zlpay.acty.MainHomeActy;
+import com.rxoa.zlpay.base.async.DefAsyncTask;
 import com.rxoa.zlpay.base.device.DeviceInterface;
 import com.rxoa.zlpay.base.device.DeviceListener;
 import com.rxoa.zlpay.base.util.StringUtil;
+import com.rxoa.zlpay.fragment.AppCenterFmt;
+import com.rxoa.zlpay.net.ReqWrapper;
+import com.rxoa.zlpay.net.RespParser;
+import com.rxoa.zlpay.vo.UserAccInfoReqVo;
+import com.rxoa.zlpay.vo.UserAccInfoRespVo;
 
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -17,8 +26,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.media.AudioManager;
+import android.media.MediaCodec;
+import android.nfc.Tag;
+import android.util.Log;
+
+import javax.security.auth.login.LoginException;
 
 public class DeviceManager {
+	MainHomeActy mActivity;
+	private String deviceEntity;
+	private String userDeviceSn;
+	public static final String TAG = DeviceManager.class.getName();
 	public enum DeviceType{AudioDevice,BluetoothDevice}
 	private BluetoothAdapter bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 	private List<BlDeviceInfo> blDevices = new ArrayList<BlDeviceInfo>();
@@ -33,6 +51,7 @@ public class DeviceManager {
 	public static DeviceManager getInstance(Context context){
 		DeviceManager mgr = new DeviceManager();
 		mgr.context = context;
+
 		return mgr;
 	}
 	public DeviceManager initManager(){
@@ -88,6 +107,7 @@ public class DeviceManager {
 						//listener.showMessage("结束搜索蓝牙设备！");
 						bluetoothAdapter.cancelDiscovery();
 					}
+
 					showBlDevice();
 				}
 			}).start();
@@ -103,8 +123,16 @@ public class DeviceManager {
 		if(!isRunning) return;
 		int i = 0;
 		final String[] bluetoothName = new String[blDevices.size()];
-		for (BlDeviceInfo device : blDevices) {
-			bluetoothName[i++] = device.name;
+		for (BlDeviceInfo deviceInfo : blDevices) {
+			bluetoothName[i++] = deviceInfo.name;
+			Log.e(TAG, "deviceinfo:" + deviceInfo.name);
+			Log.e(TAG, "deviceEntity:" + deviceEntity);
+			if (deviceInfo.name.equals(deviceEntity)&&bluetoothName!=null) {
+				devMgrlistener.showMessage("正在连接设备...");
+				device.setDeviceListener(devMgrlistener.onSelDevice(device));
+				device.initDevice(context, blDevices.get(i).address,isEntrack);
+			}
+			break;
 		}
 		//System.out.println("showdevice called..");
 		//if(blDevices.size()==0){
@@ -120,6 +148,7 @@ public class DeviceManager {
 				public void onClick(DialogInterface dialog, int which) {
 					String selDeviceName = bluetoothName[which];
 					dialog.dismiss();
+
 					if(selDeviceName.substring(0,3).equals("JHL")){
 						device = new DEVCJHLM60Impl();					
 					}else if(selDeviceName.substring(0,2).equals("MF")){
@@ -158,9 +187,12 @@ public class DeviceManager {
 		@Override
 		public void onReceive(Context context, Intent intent) {
 			String action = intent.getAction();
+//			userDeviceSn = intent.getStringExtra("devicesn");
+			deviceEntity = MainApplication.getInstance().getDeviceEntity();
 			if (BluetoothDevice.ACTION_FOUND.equals(action)) {
 
 				BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+
 				if (ifAddressExist(device.getAddress())) {
 					return;
 				}
@@ -185,6 +217,7 @@ public class DeviceManager {
 			if (intent.getAction().equals("android.intent.action.HEADSET_PLUG")) {
 				int headsetState = intent.getExtras().getInt("state");
 				int microphoneState = intent.getExtras().getInt("microphone");
+
 				if(headsetState == 0) {
 					
 				}else if(headsetState == 1){
@@ -241,5 +274,8 @@ public class DeviceManager {
 		}
 		return false;
 	}
-	
+
+
+
 }
+

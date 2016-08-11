@@ -66,6 +66,7 @@ import com.rxoa.zlpay.vo.OrderPayRespVo;
 import com.rxoa.zlpay.vo.PaytypeRespVo;
 
 public class ReadCardActy extends BaseUIActivity implements OnClickListener,DeviceListener,DeviceManagerListener,DigitPasswordKeyPadListener{
+	public static final String TAG = ReadCardActy.class.getName();
 	private Dialog dialog = null;
 	private String[] valuetype = new String[]{"耳机接口设备","蓝牙设备"};
 	private boolean[] valuestat=new boolean[]{true, false};  
@@ -149,7 +150,7 @@ public class ReadCardActy extends BaseUIActivity implements OnClickListener,Devi
                 break;
             case 2:
             	BindDeviceRespVo respVo = (BindDeviceRespVo) parser.getRespObject();
-            	if(respVo.getRespCode()==10){
+				if(respVo.getRespCode()==10){
             		showMessage("设备未登记");
             	}else if(respVo.getRespCode()==11){
             		showMessage("正在初始化设备");

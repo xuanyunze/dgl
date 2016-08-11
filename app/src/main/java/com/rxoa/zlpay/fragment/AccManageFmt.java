@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -50,6 +51,7 @@ import com.rxoa.zlpay.vo.UserAccInfoRespVo;
 import com.rxoa.zlpay.vo.UserLogoutReqVo;
 
 public class AccManageFmt extends BaseUIFragment implements OnClickListener{
+	public static final String TAG = AccManageFmt.class.getName();
 	private MainHomeActy mActivity = (MainHomeActy) this.getActivity();
 	private ScrollView scrollView;
 	
@@ -107,6 +109,7 @@ public class AccManageFmt extends BaseUIFragment implements OnClickListener{
 	}
 	
     public View initView(View view){
+
     	try{
     		setTitleText(view,R.string.title_acc);
     		scrollView = (ScrollView) view.findViewById(R.id.accmanage_scrollview);
@@ -235,7 +238,7 @@ public class AccManageFmt extends BaseUIFragment implements OnClickListener{
 		}
 	}
 	public void doLogout(){
-		try{	
+		try{
 			final UserLogoutReqVo reqVo = new UserLogoutReqVo();
 			new DefAsyncTask(getActivity()){
 				RespParser parser = null;
@@ -361,6 +364,8 @@ public class AccManageFmt extends BaseUIFragment implements OnClickListener{
 							mainCardInfo = ((UserAccInfoRespVo)parser.getRespObject()).getMainCardInfo();
 							otherCardItems = ((UserAccInfoRespVo)parser.getRespObject()).getOtherCardInfo();
 							deviceItems = ((UserAccInfoRespVo)parser.getRespObject()).getDeviceInfo();
+							Intent intent = new Intent("deviceitems" + deviceItems);
+							Log.e(TAG, "deviceItems:" + deviceItems.toString());
 							refreshViewUI();
 						}catch(Exception e){
 							e.printStackTrace();

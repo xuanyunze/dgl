@@ -33,6 +33,7 @@ public class MoneyInputCalActy extends BaseUIActivity implements OnClickListener
 		minValue = getIntent().getDoubleExtra("minValue", 100D);
 		maxValue = getIntent().getDoubleExtra("maxValue", 100000D);
 		initView();
+
 	}
 	private void initView(){
 		setContentView(R.layout.acty_money_inputcal);

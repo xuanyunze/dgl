@@ -12,7 +12,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 public class MainHomeFmtAdapter extends FragmentPagerAdapter{
 	public final static int TAB_COUNT = 4;
-	public MainHomeFmtAdapter(FragmentManager fm) {
+	public  MainHomeFmtAdapter(FragmentManager fm) {
 		super(fm);
 	}
 

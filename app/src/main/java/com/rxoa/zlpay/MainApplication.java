@@ -25,6 +25,15 @@ public class MainApplication extends BaseApplication{
 	private ArrayList<Activity> mActivities = new ArrayList<Activity>();
 	private ArrayList<Fragment> fragments = new ArrayList<Fragment>();
 	public MainHomeActy mainHomeActy;
+	public String DeviceEntity;
+
+	public String getDeviceEntity() {
+		return DeviceEntity;
+	}
+
+	public void setDeviceEntity(String deviceEntity) {
+		DeviceEntity = deviceEntity;
+	}
 
 	public static MainApplication getInstance() {
 		if (instance == null) {

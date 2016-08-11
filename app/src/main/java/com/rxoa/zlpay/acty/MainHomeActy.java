@@ -2,7 +2,9 @@ package com.rxoa.zlpay.acty;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.media.RatingCompat;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
@@ -15,7 +17,7 @@ import com.rxoa.zlpay.base.BaseViewPager;
 import com.rxoa.zlpay.security.AuthChecker;
 
 public class MainHomeActy extends BaseFmtActivity implements OnClickListener{
-	
+	public static final String TAG = MainHomeActy.class.getName();
 	public static final int TAB_APP = 0;
 	public static final int TAB_ORDER = 1;
 	public static final int TAB_ACC = 2;
@@ -152,4 +154,5 @@ public class MainHomeActy extends BaseFmtActivity implements OnClickListener{
 			break;
 		}
 	}
+
 }

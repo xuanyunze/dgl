@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion '21.1.0'
+    compileSdkVersion 23
+    buildToolsVersion '21.0.2'
 
     defaultConfig {
         applicationId "com.rxoa.zlpay"
-        minSdkVersion 19
-        targetSdkVersion 19
+        minSdkVersion 15
+        targetSdkVersion 23
         versionCode 1
         versionName "1.0"
     }
@@ -22,13 +22,14 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:19.1.0'
     compile files('libs/aishuaver_4.29.jar')
-    compile files('libs/android-support-v4.jar')
+    //    compile files('libs/android-support-v4.jar')
     compile files('libs/com-apper-codec.jar')
     compile files('libs/iBridge.jar')
     compile files('libs/jhlblueconn.jar')
     compile files('libs/meSdk-1.1.2-SNAPSHOT.jar')
     compile files('libs/mfreadersdk.jar')
     compile files('libs/pg-2.0.2.jar')
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
 }
