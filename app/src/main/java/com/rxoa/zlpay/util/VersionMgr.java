@@ -85,6 +85,8 @@ public class VersionMgr {
 				if(parser.getRespCode()==0){
 					try{
 						newVersion = ((SysUpdateRespVo)parser.getRespObject()).getVersionName();
+						Log.e(TAG, "newVersion:" + newVersion);
+						Log.e(TAG, "curVersion:" + curVersion);
 						downloadUrl = ((SysUpdateRespVo)parser.getRespObject()).getDownloadUrl();
 						newDescription = ((SysUpdateRespVo)parser.getRespObject()).getDescription();
 						if(!newVersion.equals(curVersion)){

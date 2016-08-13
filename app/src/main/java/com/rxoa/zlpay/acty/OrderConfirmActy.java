@@ -2,6 +2,7 @@ package com.rxoa.zlpay.acty;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -33,6 +34,7 @@ import com.rxoa.zlpay.vo.OrderPayReqVo;
 import com.rxoa.zlpay.vo.OrderPayRespVo;
 
 public class OrderConfirmActy extends BaseUIActivity implements OnClickListener{
+	public static final String TAG = OrderConfirmActy.class.getName();
 	private TextView tvOrderFlowid;
 	private TextView tvOrderType;
 	private TextView tvOrderValue;
